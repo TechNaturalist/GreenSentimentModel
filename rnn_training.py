@@ -20,11 +20,11 @@ model = tf.keras.models.load_model('model_newst.h5')
 
 model.load_weights('model_weights.h5')
 
-model.fit(train_inputs, train_outputs, epochs = 1000, batch_size = 200);
+model.fit(train_inputs, train_outputs, epochs = 1000000, batch_size = 200);
 
-_, accuracy = model.evaluate(train_inputs, train_outputs);
+#_, accuracy = model.evaluate(train_inputs, train_outputs);
 
-print('Accuracy: %.2f' %(accuracy*100))
+#print('Accuracy: %.2f' %(accuracy*100))
 
 model.save('model_newst_training.h5')
 

@@ -23,23 +23,10 @@ ouput = tf.constant(true_output,dtype=tf.float64)
 
 model = Sequential()
 model.add(Dense(10, input_dim = 4, activation='relu'))
-model.add(Dense(100, activation='relu'))
-model.add(Dense(100, activation='relu'))
-model.add(Dense(100, activation='relu'))
-model.add(Dense(100, activation='relu'))
-model.add(Dense(100, activation='relu'))
-model.add(Dense(100, activation='relu'))
-model.add(Dense(100, activation='relu'))
-model.add(Dense(100, activation='relu'))
-model.add(Dense(100, activation='relu'))
-model.add(Dense(100, activation='relu'))
-model.add(Dense(100, activation='relu'))
-model.add(Dense(100, activation='relu'))
-model.add(Dense(100, activation='relu'))
-model.add(Dense(100, activation='relu'))
+model.add(Dense(10, activation='relu'))
 model.add(Dense(4, activation='relu'))
 
-model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+model.compile(loss='mae', optimizer='adam', metrics=[tf.keras.metrics.MeanSquaredError()])
 
 model.fit(iput, ouput, epochs = 1000000, batch_size = 200);
 
